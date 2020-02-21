@@ -59,7 +59,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">295字</span>
+            <span class="post-count">296字</span>
         </span>
     </span>
 
@@ -95,7 +95,7 @@
       
 
       
-      <h2 id="注解说明"><a href="#注解说明" class="headerlink" title="注解说明"></a>注解说明</h2><ul>
+      <h2 id="注解说明（String）"><a href="#注解说明（String）" class="headerlink" title="注解说明（String）"></a>注解说明（String）</h2><ul>
 <li><p>@Autowired：自动装配通过类型，名字。如果Autowired不能 唯一的装配上属性，则需要通过 @Qualifier(value = “xxx”)来实现。 @Autowired注入首先根据byType注入，当类型大于1时在根据byName注入。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//@Autowired注入首先根据byType注入，当类型大于1时在根据byName注入。</span></span><br><span class="line">  <span class="meta">@Autowired</span></span><br><span class="line">  <span class="meta">@Qualifier</span>(value = <span class="string">"cat1"</span>)</span><br><span class="line">  <span class="keyword">private</span> Cat cat;</span><br><span class="line">  <span class="meta">@Autowired</span></span><br><span class="line">  <span class="meta">@Qualifier</span>(value = <span class="string">"dog1"</span>)</span><br><span class="line">  <span class="keyword">private</span> Dog dog;</span><br></pre></td></tr></table></figure>
 
