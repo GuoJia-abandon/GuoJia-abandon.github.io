@@ -59,7 +59,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">0字</span>
+            <span class="post-count">295字</span>
         </span>
     </span>
 
@@ -79,6 +79,8 @@
 
     
     
+    <div class="tocbot"></div>
+
 
 
 
@@ -93,7 +95,51 @@
       
 
       
-      
+      <h2 id="注解说明"><a href="#注解说明" class="headerlink" title="注解说明"></a>注解说明</h2><ul>
+<li><p>@Autowired：自动装配通过类型，名字。如果Autowired不能 唯一的装配上属性，则需要通过 @Qualifier(value = “xxx”)来实现。 @Autowired注入首先根据byType注入，当类型大于1时在根据byName注入。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//@Autowired注入首先根据byType注入，当类型大于1时在根据byName注入。</span></span><br><span class="line">  <span class="meta">@Autowired</span></span><br><span class="line">  <span class="meta">@Qualifier</span>(value = <span class="string">"cat1"</span>)</span><br><span class="line">  <span class="keyword">private</span> Cat cat;</span><br><span class="line">  <span class="meta">@Autowired</span></span><br><span class="line">  <span class="meta">@Qualifier</span>(value = <span class="string">"dog1"</span>)</span><br><span class="line">  <span class="keyword">private</span> Dog dog;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li>@Resource :默认通过byname的方式取实现，如果找不到名字，则通过byType 实现</li>
+</ul>
+<ul>
+<li><p>@Nullable:如果字段标记了这个注解，说明这个字段可以为null</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(@Nullable String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>@Component:组件，放在类上，说明这个类被spring管理了，等价于<bean id="user" class="com.kang.pojo.User"/></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//@Component等价于&lt;bean id="user" class="com.kang.pojo.User"/&gt;</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line"><span class="keyword">public</span>   String name=<span class="string">"guojia"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>衍生的注解</p>
+<p>@Component有几个衍生类</p>
+<ul>
+<li><p>dao层【@Repository】</p>
+</li>
+<li><p>service层 【@Service】</p>
+</li>
+<li><p>controller层 【@Controller】</p>
+<p>这四个注解功能都是一样的，都是代表将某个类注册到Spring中，装配bean。</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>@Value:属性值的注入，@Value(“12312”)等价于<property name="cards" value="12312"/></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//@Component等价于&lt;bean id="user" class="com.kang.pojo.User"/&gt;</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line"><span class="comment">//@Value("12312")等价于&lt;property name="cards" value="12312"/&gt;</span></span><br><span class="line"><span class="meta">@Value</span>(<span class="string">"12312"</span>)</span><br><span class="line"><span class="keyword">public</span> String cards;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+
       
       <!-- reward -->
       
